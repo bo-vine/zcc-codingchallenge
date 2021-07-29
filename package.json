@@ -1,0 +1,22 @@
+{
+  "name": "zcc-codingchallenge",
+  "version": "1.0.0",
+  "description": "Coding challenege for Zendesk's Engineering Co-op position 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tylermav/zcc-codingchallenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylermav/zcc-codingchallenge/issues"
+  },
+  "homepage": "https://github.com/tylermav/zcc-codingchallenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
