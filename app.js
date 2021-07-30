@@ -1,7 +1,6 @@
 // Require application dependencies
 const express = require('express');
-const request = require('request');
-const https = require('https');
+const bent = require('bent');
 
 // Request parameters using an API token
 const url = 'https://zcccodingchallenge.zendesk.com/api/v2/tickets.json'
@@ -14,8 +13,8 @@ const response = request.get(url, auth=(user, pwd));
 const app = express();
 
 // Register a route handler for GET requests made to /hello
-app.get('/', (req, res) => {
-
+app.post('/', (req, res) => {
+  res.
 });
 
 // Get port from environment or default to port 3000.
