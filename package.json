@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/tylermav/zcc-codingchallenge#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "request": "^2.88.2"
+    "bent": "^7.3.12",
+    "express": "^4.17.1"
   }
 }
