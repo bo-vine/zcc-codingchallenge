@@ -1,22 +1,31 @@
 // Require application dependencies
-const express = require('express');
-const bent = require('bent');
+import express from 'express'
+import got from 'got'
 
-// Request parameters using an API token
+// Auth key is stored on a separate file off of the repo for safety
+import {encryptAuthkey as KEY} from './secret.js'
+
+const app = express()
+
 const url = 'https://zcccodingchallenge.zendesk.com/api/v2/tickets.json'
-const user = 'tylermavan@gmail.com' + '/token'
-const pwd = '3y6VNkmHyqUWIqMC8hdEfEXi82xsDJhwBzefZnYZ'
+const basicAuth = KEY()
 
-// Create our app by calling the express function
-const app = express();
+app.get('/', async function(req,res) {
+  const result = await axios.get(url, {
+    headers: {
+      Authorization: basicAuth
+    }
+  })
+  console.log(result.status)
+})
 
 // Register a route handler for GET requests made to /hello
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('./public'))
 
 // Get port from environment or default to port 3000.
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
 // Ask our app to listen on the calculated port.
 app.listen(port, () => {
-  console.log(`Successfully listening on ${port}`);
-});
+  console.log(`Successfully listening on ${port}`)
+})

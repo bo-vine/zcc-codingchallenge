@@ -2,7 +2,8 @@
   "name": "zcc-codingchallenge",
   "version": "1.0.0",
   "description": "Coding challenege for Zendesk's Engineering Co-op position 2021",
-  "main": "index.js",
+  "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,8 +18,8 @@
   },
   "homepage": "https://github.com/tylermav/zcc-codingchallenge#readme",
   "dependencies": {
-    "axios": "^0.21.1",
     "express": "^4.17.1",
+    "got": "^11.8.2",
     "nodemon": "^2.0.12"
   }
 }
