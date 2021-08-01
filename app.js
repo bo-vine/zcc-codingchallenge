@@ -1,6 +1,6 @@
 // Require application dependencies
 import express from 'express'
-import axios from 'axios'
+import got from 'got'
 import process from 'process'
 
 // Request parameters using an API token
@@ -17,6 +17,7 @@ const app = express();
 
 // Register a route handler for GET requests made to /hello
 app.get ('/', (req, res) => {
+/* 
   axios({
     method: 'get',
     url: '/api/v2/tickets/1.json',
@@ -26,12 +27,14 @@ app.get ('/', (req, res) => {
       Authorization: 'Basic ' + base64
     }
   })
-  .then(function (res) {
+  .then(res => {
+    res.data.pipe(fs.)
     console.log(res.status)
   })
-  .catch(function (err) {
+  .catch(err => {
     console.log(err)
   })
+*/
 })
 
 // Get port from environment or default to port 3000.
