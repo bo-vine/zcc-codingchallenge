@@ -8,17 +8,46 @@ if (navigator.onLine) {
 } else {
   console.log("User is offline")
 }
-
+/*
+  GOOD 'OL MAIN
+*/
 async function main() {
   const tickets = await getTickets();
-  const requester = await getRequester(1265066693050);
 
   console.log(tickets);
-  console.log(requester);
+}
+// End Main
+
+/**
+* CLASSES AREA
+*/
+
+class Ticket {
+  constructor(id, status, subject, description) {
+    this.id = id;
+    this.status = status;
+    this.subject = subject;
+    this.description = description;
+    this.name = getRequester(this.id).name;
+    this.email = getRequester(this.id).email;
+  }
+
+  domSimpleComponent() {
+
+  }
+
+  domDetailedComponent() {
+    
+  }
 }
 
-/* START REQUESTER INFO
-    call to collecting requester information
+/**
+* FUNCTIONS AREA
+*/
+
+/*
+  START getRequester
+    call to collect requester information from Zendesk API/users
 */
 async function getRequester(id) {
   const requesterData = await fetch('requester/' + id);
@@ -32,10 +61,11 @@ async function getRequester(id) {
 
   return tempRequesterInfo;
 }
-// END REQUESTER INFO
+// END getRequester
 
-/* START TICKET CALL
-     pulling ticket information and moving it to the client side
+/*
+  START getTickets
+     pulling ticket information from Zendesk API/tickets
 */
 async function getTickets() {
   const apiData = await fetch('tickets');
@@ -50,10 +80,10 @@ async function getTickets() {
       id: currentTicket.id,
       status: currentTicket.status,
       subject: currentTicket.subject,
+      description: currentTicket.description
     }
   }
   console.log(tempTicketList);
   return tempTicketList;
 }
-
-// END TICKET CALL
+// END getTickets
