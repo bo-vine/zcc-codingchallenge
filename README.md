@@ -10,19 +10,11 @@ System Versions & Dependencies
 
 Steps
 ======
-(Received ZIP)
-1. Install node.js (newest stable version)
-2. 4. open cmd,bash,etc.
-3. run "npm start"
-6. enter "localhost:3000" into a browser
-
-(Clone from github)
-1. Install node.js (newest stable version)
-2. 'secrets.js' folder will not be included so request via email
-3. add secrets to the directory where app.js is
-4. open cmd,bash,etc.
-5. run "npm start"
-6. enter "localhost:3000" into a browser
+1. Download the files via ZIP from the top right 'code' button 
+2. Install node.js (newest stable version)
+3. 4. open cmd,bash,etc.
+4. run "npm start"
+5. enter "localhost:3000" into a browser
 
 Current Functionality
 =====================
