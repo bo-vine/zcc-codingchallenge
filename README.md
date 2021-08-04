@@ -26,6 +26,7 @@ Steps
 
 Current Functionality
 =====================
+- Retrieve ticket data from the first 25 tickets
 - List ticket information of the 25 most recent tickets from the Zendesk API
 
 Missing Requirements
@@ -36,7 +37,7 @@ Missing Requirements
 
 Hardships
 =========
-I personally have not interacted with APIs and working in the backend. I've learned A LOT from this week of working on this challenge. From learning how to make an API call, then pulling information from that API, then displaying the API data on to the client side, and picking dependencies. Unfortunately, I have missed a few requirements as shown above but, overall, this was a wonderful experience and would be glad to go over all this again! Thank you for time!
+I personally have not interacted with APIs and working in the backend. I've learned A LOT from this week of working on this challenge. From learning how to make an API call, then pulling information from that API, then displaying the API data on to the client side, and picking dependencies. Unfortunately, I have missed a few requirements as shown above but, overall, this was a wonderful experience and would be glad to go over all this again! I am always willing to learn more! Thank you for time!
 
 Future features
 ===============
