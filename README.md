@@ -10,9 +10,9 @@ System Versions & Dependencies
 
 Steps
 ======
-1. Download the files via ZIP from the top right 'code' button 
+1. Download the files via ZIP from the top right 'code' button
 2. Install node.js (newest stable version)
-3. 4. open cmd,bash,etc.
+3. open cmd, bash, etc.
 4. run "npm start"
 5. enter "localhost:3000" into a browser
 
