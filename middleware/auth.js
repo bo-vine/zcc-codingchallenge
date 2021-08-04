@@ -1,9 +1,10 @@
+// Auth key is stored on a separate file off of the repo for safety'
 import {encryptAuthkey as KEY} from '../secret.js';
 import got from 'got';
 
-export const subdomain = 'zcccodingchallenge.zendesk.com';
-export const baseUrl = 'https://' + subdomain + '/api/v2/';
-export const basicAuth = KEY();
+const subdomain = 'zcccodingchallenge.zendesk.com';
+const baseUrl = 'https://' + subdomain + '/api/v2/';
+const basicAuth = KEY();
 
 export async function auth(path) {
   let got_data = null;
@@ -17,6 +18,25 @@ export async function auth(path) {
       }
     });
     console.log(got_data.statusCode);
+  } catch (err) {
+    console.log(err)
+  }
+
+  return got_data;
+}
+
+export async function authUrl(url) {
+  let got_data = null;
+
+  try {
+    got_data = await got({
+      url: url,
+      responseType: 'json',
+      headers: {
+        'Authorization' : basicAuth
+      }
+    });
+    console.log(got_data);
   } catch (err) {
     console.log(err)
   }
