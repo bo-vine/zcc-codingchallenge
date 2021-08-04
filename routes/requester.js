@@ -7,7 +7,8 @@ router.get('/requester/:requester_id', async (req,res) => {
   try {
     console.log(req.params);
     const requester_id = req.params.requester_id;
-    const apiData = await auth('users/'+requester_id);
+    const apiData = await auth('users/' + requester_id);
+    console.log(apiData.statusCode);
     res.send(apiData.body);
   } catch (err) {
     console.log(err)

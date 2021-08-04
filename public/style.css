@@ -1,0 +1,25 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#ticket_viewer {
+  width: 99vw;
+}
+
+.ticketlist_wrapper {
+  width: 100%;
+  border: 1px solid;
+  margin: 10px 0px;
+}
+
+.ticketChild {
+  display: inline-block;
+}
+
+.status {
+  padding-right: 10px;
+  padding-left: 10px;
+  justify-content: center;
+  width: 100px;
+}

@@ -5,45 +5,74 @@ if (navigator.onLine) {
   } catch (err) {
     console.log(err);
   }
+
 } else {
   console.log("User is offline")
 }
-/*
-  GOOD 'OL MAIN
-*/
-async function main() {
-  const tickets = await getTickets();
 
-  console.log(tickets);
+/*****************
+ * GOOD 'OL MAIN *
+ *****************/
+async function main() {
+  const ticketsList = await getTickets();
+
+  for(let i = 0; i < ticketsList.length; i++ ) {
+    const requester = await getRequester(ticketsList[i].requester_id);
+    let ticket = await new Ticket(
+      ticketsList[i].id, ticketsList[i].status,
+      ticketsList[i].subject, ticketsList[i].description,
+      requester.name, requester.email
+    );
+    ticket.domSimpleView();
+  }
+
+  console.log(ticketsList);
 }
 // End Main
 
-/**
-* CLASSES AREA
-*/
+/****************
+ * CLASSES AREA *
+ ****************/
 
 class Ticket {
-  constructor(id, status, subject, description) {
+  constructor(id, status, subject, description, name, email) {
     this.id = id;
     this.status = status;
     this.subject = subject;
     this.description = description;
-    this.name = getRequester(this.id).name;
-    this.email = getRequester(this.id).email;
+    this.name = name;
+    this.email = email;
   }
 
-  domSimpleComponent() {
+  async domSimpleView() {
+    const newDiv = document.createElement("div");
+    newDiv.className = "ticketlist_wrapper";
+    newDiv.setAttribute('ticket_id', this.id);
+    const newH2 = [document.createElement("h2"),
+                   document.createElement("h2")];
 
+    newDiv.appendChild(newH2[0]);
+    newDiv.appendChild(newH2[1]);
+
+    let h2Content = await document.createTextNode(this.status);
+    newH2[0].appendChild(h2Content);
+    newH2[0].className = "ticketChild status";
+    h2Content = await document.createTextNode(this.subject);
+    newH2[1].appendChild(h2Content);
+    newH2[1].className = "ticketChild subject";
+
+    const ticket_viewer = document.getElementById("ticket_viewer");
+    ticket_viewer.appendChild(newDiv);
   }
 
-  domDetailedComponent() {
-    
+  domDetailedView() {
+
   }
 }
 
-/**
-* FUNCTIONS AREA
-*/
+/******************
+ * FUNCTIONS AREA *
+ ******************/
 
 /*
   START getRequester
@@ -78,6 +107,7 @@ async function getTickets() {
     let currentTicket = ticketsJson.tickets[i];
     tempTicketList[i] = await {
       id: currentTicket.id,
+      requester_id: currentTicket.requester_id,
       status: currentTicket.status,
       subject: currentTicket.subject,
       description: currentTicket.description
@@ -87,3 +117,7 @@ async function getTickets() {
   return tempTicketList;
 }
 // END getTickets
+
+/*
+  START loadCSS
+*/

@@ -1,0 +1,16 @@
+Simple
+div onclick
+  h2 = status
+  h2 = subject
+
+Detailed
+div
+  div = mini_head
+    h1 = Status || Subject
+    h3 = name @ email
+    h3 = ticket_id
+
+  div = mini_body
+    p = description
+
+  button = back to all tickets
