@@ -1,12 +1,12 @@
 # zcc-codingchallenge
 Zendesk 2021 coding challenge attempt for the Engineering Co-op position from (MM/YY) 09/21 - 07/22
 
-System Ver & Dependencies
+System Versions & Dependencies
 =========================
-"node": "^14.16.0",
-"express": "^4.17.1",
-"got": "^11.8.2",
-"nodemon": "^2.0.12"
+- "node": "^14.16.0",
+- "express": "^4.17.1",
+- "got": "^11.8.2",
+- "nodemon": "^2.0.12"
 
 Steps
 ======
