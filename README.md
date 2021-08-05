@@ -1,5 +1,10 @@
 # zcc-codingchallenge
-Zendesk 2021 coding challenge attempt for the Engineering Co-op position from (MM/YY) 09/21 - 07/22
+
+===============================
+**THIS IS A NON SUBMISSION BRANCH.** DO NOT ASSESS THIS BRANCH. GO BACK TO THE MAIN BRANCH.
+===============================
+This is a NON SUBMISSION branch to, mess with and, continue working on my previous submission to Zendesk. This is just my playground to continue interacting with Zendesk API until my trial is up.
+===============================
 
 System Versions & Dependencies
 =========================
